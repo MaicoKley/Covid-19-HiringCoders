@@ -1,0 +1,48 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corona Vírus Boas Notícias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h2>Corona Vírus Algumas <i>Boas</i> Notícias</h2>
+    </header>
+    <div class="container">
+        <nav class="menu">
+            <a href="./index.html">Home</a>
+            <a href="./about.html">Sobre</a>
+            <a href="#">Contato</a>
+            <a href="./more.html">Saiba Mais</a>
+        </nav>
+        <div class="contact">
+            <form>
+                <h3>Entre em contato</h3>
+                <p>
+                    <label for="subject">Assunto</label>
+                    <input type="text" id="subjectId" placeholder="Informe o Assunto" name="subject" />
+                </p>
+                <p>
+                    <label for="message">Mensagem</label>
+                    <textarea id="messageId" placeholder="Deixe sua mensagem" name="message"></textarea>
+                </p>
+                <input class="send" type="submit" onclick="sendMail();" value="Enviar" />
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function sendMail() {
+        var yourMessage = document.getElementById("messageId").value;
+        var subject = document.getElementById("subjectId").value;
+        document.location.href = "mailto:maicokley@hotmail.com?subject="
+            + encodeURIComponent(subject)
+            + "&body=" + encodeURIComponent(yourMessage);
+    }
+</script>
